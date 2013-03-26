@@ -13,7 +13,6 @@ This documentation is our little living thing, it regularly evoles and we feed i
 .. toctree::
    :maxdepth: 2
 
-   getting_started
    01-01_ae_intro
    01-02_creating_project
    01-03_creating_trans
