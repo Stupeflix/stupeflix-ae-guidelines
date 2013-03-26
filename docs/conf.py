@@ -40,8 +40,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Stupeflix Factory'
-copyright = u'2012, Stupeflix'
+project = u'Stupeflix SxC Workflow: After Effects Guidelines'
+copyright = u'2013, Stupeflix'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
