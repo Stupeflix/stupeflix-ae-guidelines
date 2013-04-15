@@ -54,6 +54,7 @@ So, we are going to add a filter to our picture. The filter we want to apply is 
 You should have something looking like that:
 
 ::
+
 	<movie service="craftsman-1.0">
 	  <body>
 	    <effect type="none" duration="10.0">
@@ -85,6 +86,7 @@ If you Generate the video, you'll see now that our picture is in black and white
 Now let's use a preset with our colormap effect. You can find the list of presets on the Colormap section of the filters page. I'll be toying with the “negative” one.
 
 ::
+
 	<filter type="colormap" preset="negative">
 	</filter>
 
@@ -93,18 +95,21 @@ If you generate the video, you'll see that the colors have been inverted, giving
 If no preset gives you satisfaction, you can create your very own rgba-bias matrix. First of all, remove the preset attribute, at replace it with this funky one: rgba-bias-matrix
 
 ::
+
 	<filter type="colormap" rgba-bias-matrix="">
 	</filter>
 
 Now we need to fill tha matrix with 5 hex values, one for each channel (red, green, blue, alpha), and a last one for the bias. Each hex value is composed of a # sign followed by 8 chars (a couple per channel, including alpha)
 
 ::
+
 	<filter type="colormap" rgba-bias-matrix="#FF000000,#00FF0000,#0000FF00,#000000FF,#00000000">
 	</filter>
 
 If you generate the video, you'll see that our matrix changed nothing. That's because this matrix is the one our image uses by default. If you change the values of each channel, you'll see how it impacts the result. If your goal is just to give a color dominent tint to your picture, use the bias as it's it's job:
 
 ::
+
 	<filter type="colormap" rgba-bias-matrix="#FF000000,#00FF0000,#0000FF00,#000000FF,#aa000000">
 	</filter>
 
@@ -120,6 +125,7 @@ Now that we have seen how to apply an effect on a user assets, let's see how we 
 It sould look a little like this:
 
 ::
+
 	<movie service="craftsman-1.0">
 	  <body>
 	    <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
@@ -131,6 +137,7 @@ It sould look a little like this:
 If we follow what we have done so far for the picture, we can imagine that adding the last colormap effect we have made would look like something like that:
 
 ::
+
 	<movie service="craftsman-1.0">
 	  <body>
 	    <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
@@ -148,6 +155,7 @@ For that we are going to use the stack object, defined by the <stack> and </stac
 Let's start by encapsulating our widget into a stack. It should be somewhat similar to this:
 
 ::
+
 	<movie service="craftsman-1.0">
 	  <body>
 	    <stack>
@@ -163,6 +171,7 @@ Let's start by encapsulating our widget into a stack. It should be somewhat simi
 The filter is still our Widget's child. We have to move it into the stack like this:
 
 ::
+
 	<movie service="craftsman-1.0">
 	  <body>
 	    <stack>
@@ -192,6 +201,7 @@ Hiding a layer
 Let's have a look at this simple project. As you can see it's our Scrapbook Text Widget, nothing too fancy. If you remix it, the code should look like that:
 
 ::
+
 	<movie service="craftsman-1.0">
 	  <body>
 	      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
@@ -203,6 +213,7 @@ Let's have a look at this simple project. As you can see it's our Scrapbook Text
 As you can see on the left and right side, there are some white spaces, which are in fact graphical elements of side picture borders, as you can add 2 user picture as a decoration. You can verify that right now:
 
 ::
+
 	<movie service="craftsman-1.0">
 	  <body>
 	      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
@@ -218,6 +229,7 @@ You may notice that the 2 pictures seems to miss their closing tag </picture>. A
 Take a closer look at the ends of those lines, and notice the / (slash) sign just before the > (greater than) :
 
 ::
+
 	.../help/assets/IMG_0017.JPG" />
 
 This slash closes the tag. This is a handy tip to produce lighter and less bloated XML definitions.
@@ -233,6 +245,7 @@ We can see that we have 2 layers pic01Landscape and pic01Portrait that are used 
 Let's see it in action:
 
 ::
+
 	<movie service="craftsman-1.0">
 	  <body>
 	      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
@@ -255,6 +268,7 @@ Changing a color is as easy are removing layers, we'll also be using the <style 
 First of all, let's have a look at this project. Remix it, it should look something like this:
 
 ::
+
 	<movie service="craftsman-1.0">
 	  <body>
 	    <widget type="set.moviestyle.machete.solo.01" duration="10">
@@ -273,6 +287,7 @@ This is a simple Widget, with a text and a user picture. To bake this extreme lo
 If we have a quick look at the Stupeflix Library, we get the 4 solid names. Now we just have to change their color in the <style /> tags.
 
 ::
+
 	<movie service="craftsman-1.0">
 	  <body>
 	    <widget type="set.moviestyle.machete.solo.01" duration="10">
@@ -295,6 +310,7 @@ As this Widget rely heavily on the user picture contrast, you can try to apply a
 Here is the result with a lower contrast.
 
 ::
+
 	<movie service="craftsman-1.0">
 	  <body>
 	    <widget type="set.moviestyle.machete.solo.01" duration="10">
@@ -327,6 +343,7 @@ Putting two Widgets together is as easy as putting them one after another in the
 Should look mostly like that:
 
 ::
+
 	<movie service="craftsman-1.0">
 	  <body>
 	      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
@@ -347,6 +364,7 @@ For the transition you will need to have at least 2 bricks as they only work bet
 Let's add the transition in our project:
 
 ::
+
 	<movie service="craftsman-1.0">
 	  <body>
 	      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
@@ -366,11 +384,13 @@ For this first exemple, let's use the built-in transition move. We'll make this 
 Should look like this:
 
 ::
+
 	<transition type="move" duration="1" direction="left"/>
 
 or like this if you are using a custom made transition widget in After Effects:
 
 ::
+
 	<transition type="custom" duration="1" >
 	  <widget type="set.transitions.dissolve.01"/>
 	</transition>
@@ -380,6 +400,7 @@ If you look at the result here or here, you'll notice that the final duration of
 If we have a closer look at the XML defintion we clearly see that both widgets are 10 second long:
 
 ::
+
 	<movie service="craftsman-1.0">
 	  <body>
 	      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
@@ -408,6 +429,7 @@ Audio is not directly supported in our conversion process as widgets inside Stup
 We will then upload this audio file and link it to your widget inside the XML. If you want to have the audio file play at the same time of the widget, you'll need to stack them:
 
 ::
+
 	<movie service="craftsman-1.0">
 	  <body>
 	    <stack>
