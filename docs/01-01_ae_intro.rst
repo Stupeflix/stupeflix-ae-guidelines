@@ -2,7 +2,8 @@
 Introduction to Adobe After Effects
 ===================================
 
-Adobe After Effects is a widespread animation and compositing program, or, to put it another way, it's kind of Photoshop for video. If you don't have After Effects yet, or need more information about this product, you can check its dedicated page on `Adobe.com<http://www.adobe.com/products/aftereffects.html>`_ and download a 30 day trial version.
+Adobe After Effects is a widespread animation and compositing program, or, to put it another way, it's kind of Photoshop for video. If you don't have After Effects yet, or need more information about this product, you can check its dedicated page on `Adobe.com
+<http://www.adobe.com/products/aftereffects.html>`_ and download a 30 day trial version.
 
 Why After Effects?
 ------------------
