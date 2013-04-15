@@ -26,14 +26,16 @@ Watch and remix a copy of this project.
 
 The XML Editor should open up, and the XML definition should look something like that:
 
-''<movie service="craftsman-1.0">''
-''  <body>''
-''    <effect type="none" duration="10.0">''
-''      <image filename="http://stupeflix-assets.s3.amazonaws.com/help/assets/IMG_0024.JPG">''
-''      </image>''
-''    </effect>''
-''  </body>''
-''</movie>''
+::
+
+	  <movie service="craftsman-1.0">
+	    <body>
+	      <effect type="none" duration="10.0">
+	        <image filename="http://stupeflix-assets.s3.amazonaws.com/help/assets/IMG_0024.JPG">
+	        </image>
+	      </effect>
+	    </body>
+	  </movie>
 
 As you can see, it doesn't look complicated at all. What have we here:
 
@@ -51,53 +53,60 @@ So, we are going to add a filter to our picture. The filter we want to apply is 
 
 You should have something looking like that:
 
-''<movie service="craftsman-1.0">''
-''  <body>''
-''    <effect type="none" duration="10.0">''
-''      <image filename="http://stupeflix-assets.s3.amazonaws.com/help/assets/IMG_0024.JPG">''
-''        <filter>''
-''        </filter>''
-''      </image>''
-''    </effect>''
-''  </body>''
-''</movie>''
+::
+	<movie service="craftsman-1.0">
+	  <body>
+	    <effect type="none" duration="10.0">
+	      <image filename="http://stupeflix-assets.s3.amazonaws.com/help/assets/IMG_0024.JPG">
+	        <filter>
+	        </filter>
+	      </image>
+	    </effect>
+	  </body>
+	</movie>
 
 Now we have to define what kind of effect we want to apply. For this exemple I've choosen Colormap. It allows us to modify the look and feel of the picture.
 
-''<movie service="craftsman-1.0">''
-''  <body>''
-''    <effect type="none" duration="10.0">''
-''      <image filename="http://stupeflix-assets.s3.amazonaws.com/help/assets/IMG_0024.JPG">''
-''        <filter type="colormap">''
-''        </filter>''
-''      </image>''
-''    </effect>''
-''  </body>''
-''</movie>''
+::
+
+	<movie service="craftsman-1.0">
+	  <body>
+	    <effect type="none" duration="10.0">
+	      <image filename="http://stupeflix-assets.s3.amazonaws.com/help/assets/IMG_0024.JPG">
+	        <filter type="colormap">
+	        </filter>
+	      </image>
+	    </effect>
+	  </body>
+	</movie>
 
 If you Generate the video, you'll see now that our picture is in black and white. It's the default behavior of this effect when neither a preset, nor a color matrix is called.
 
 Now let's use a preset with our colormap effect. You can find the list of presets on the Colormap section of the filters page. I'll be toying with the “negative” one.
 
-''<filter type="colormap" preset="negative">''
-''</filter>''
+::
+	<filter type="colormap" preset="negative">
+	</filter>
 
 If you generate the video, you'll see that the colors have been inverted, giving a negative look. See the result here.
 
 If no preset gives you satisfaction, you can create your very own rgba-bias matrix. First of all, remove the preset attribute, at replace it with this funky one: rgba-bias-matrix
 
-''<filter type="colormap" rgba-bias-matrix="">''
-''</filter>''
+::
+	<filter type="colormap" rgba-bias-matrix="">
+	</filter>
 
 Now we need to fill tha matrix with 5 hex values, one for each channel (red, green, blue, alpha), and a last one for the bias. Each hex value is composed of a # sign followed by 8 chars (a couple per channel, including alpha)
 
-''<filter type="colormap" rgba-bias-matrix="#FF000000,#00FF0000,#0000FF00,#000000FF,#00000000">''
-''</filter>''
+::
+	<filter type="colormap" rgba-bias-matrix="#FF000000,#00FF0000,#0000FF00,#000000FF,#00000000">
+	</filter>
 
 If you generate the video, you'll see that our matrix changed nothing. That's because this matrix is the one our image uses by default. If you change the values of each channel, you'll see how it impacts the result. If your goal is just to give a color dominent tint to your picture, use the bias as it's it's job:
 
-''<filter type="colormap" rgba-bias-matrix="#FF000000,#00FF0000,#0000FF00,#000000FF,#aa000000">''
-''</filter>''
+::
+	<filter type="colormap" rgba-bias-matrix="#FF000000,#00FF0000,#0000FF00,#000000FF,#aa000000">
+	</filter>
 
 Red biased. See the result here.
 
@@ -110,25 +119,27 @@ Now that we have seen how to apply an effect on a user assets, let's see how we 
 
 It sould look a little like this:
 
-''<movie service="craftsman-1.0">''
-''  <body>''
-''    <widget type="set.scrapbook.text.01b.m.01" duration="10.0">''
-''      <text>What a wonderfull world !</text>''
-''    </widget>''
-''  </body>''
-''</movie>''
+::
+	<movie service="craftsman-1.0">
+	  <body>
+	    <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
+	      <text>What a wonderfull world !</text>
+	    </widget>
+	  </body>
+	</movie>
 
 If we follow what we have done so far for the picture, we can imagine that adding the last colormap effect we have made would look like something like that:
 
-''<movie service="craftsman-1.0">''
-''  <body>''
-''    <widget type="set.scrapbook.text.01b.m.01" duration="10.0">''
-''      <text>What a wonderfull world !</text>''
-''      <filter type="colormap" rgba-bias-matrix="#FF000000,#00FF0000,#0000FF00,#000000FF,#aa000000">''
-''      </filter>''        
-''    </widget>''
-''  </body>''
-''</movie>''
+::
+	<movie service="craftsman-1.0">
+	  <body>
+	    <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
+	      <text>What a wonderfull world !</text>
+	      <filter type="colormap" rgba-bias-matrix="#FF000000,#00FF0000,#0000FF00,#000000FF,#aa000000">
+	      </filter>       
+	    </widget>
+	  </body>
+	</movie>
 
 But if you generate the video, you'll see that nothing happens. That's because Widgets are a bit special, and the only children you can add, remove, change are the ones already built in it. In order to achieve the look we want, we have to embbed the widget in an higher-level object, and apply the filter on this object.
 
@@ -136,31 +147,33 @@ For that we are going to use the stack object, defined by the <stack> and </stac
 
 Let's start by encapsulating our widget into a stack. It should be somewhat similar to this:
 
-''<movie service="craftsman-1.0">''
-''  <body>''
-''    <stack>''
-''      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">''
-''        <text>What a wonderfull world !</text>''
-''        <filter type="colormap" rgba-bias-matrix="#FF000000,#00FF0000,#0000FF00,#000000FF,#aa000000">''
-''        </filter>''
-''      </widget>''
-''    </stack>''
-''  </body>''
-''</movie>''
+::
+	<movie service="craftsman-1.0">
+	  <body>
+	    <stack>
+	      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
+	        <text>What a wonderfull world !</text>
+	        <filter type="colormap" rgba-bias-matrix="#FF000000,#00FF0000,#0000FF00,#000000FF,#aa000000">
+	        </filter>
+	      </widget>
+	    </stack>
+	  </body>
+	</movie>
 
 The filter is still our Widget's child. We have to move it into the stack like this:
 
-''<movie service="craftsman-1.0">''
-''  <body>''
-''    <stack>''
-''      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">''
-''        <text>What a wonderfull world !</text>''
-''      </widget>''
-''      <filter type="colormap" rgba-bias-matrix="#FF000000,#00FF0000,#0000FF00,#000000FF,#aa000000">''
-''      </filter>''
-''    </stack>''
-''  </body>''
-''</movie>''
+::
+	<movie service="craftsman-1.0">
+	  <body>
+	    <stack>
+	      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
+	        <text>What a wonderfull world !</text>
+	      </widget>
+	      <filter type="colormap" rgba-bias-matrix="#FF000000,#00FF0000,#0000FF00,#000000FF,#aa000000">
+	      </filter>
+	    </stack>
+	  </body>
+	</movie>
 
 Now, if you generate the video, your widget will have the filter applied. You can see the result here !
 
@@ -178,31 +191,34 @@ Hiding a layer
 
 Let's have a look at this simple project. As you can see it's our Scrapbook Text Widget, nothing too fancy. If you remix it, the code should look like that:
 
-''<movie service="craftsman-1.0">''
-''  <body>''
-''      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">''
-''        <text>What a wonderfull world !</text>''
-''      </widget>''
-''  </body>''
-''</movie>''
+::
+	<movie service="craftsman-1.0">
+	  <body>
+	      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
+	        <text>What a wonderfull world !</text>
+	      </widget>
+	  </body>
+	</movie>
 
 As you can see on the left and right side, there are some white spaces, which are in fact graphical elements of side picture borders, as you can add 2 user picture as a decoration. You can verify that right now:
 
-''<movie service="craftsman-1.0">''
-''  <body>''
-''      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">''
-''        <text>What a wonderfull world !</text>''
-''        <image filename="http://stupeflix-assets.s3.amazonaws.com/help/assets/IMG_0017.JPG" />''
-''        <image filename="http://stupeflix-assets.s3.amazonaws.com/help/assets/IMG_0022.JPG" />''
-''      </widget>''
-''  </body>''
-''</movie>''
+::
+	<movie service="craftsman-1.0">
+	  <body>
+	      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
+	        <text>What a wonderfull world !</text>
+	        <image filename="http://stupeflix-assets.s3.amazonaws.com/help/assets/IMG_0017.JPG" />
+	        <image filename="http://stupeflix-assets.s3.amazonaws.com/help/assets/IMG_0022.JPG" />
+	      </widget>
+	  </body>
+	</movie>
 
 You may notice that the 2 pictures seems to miss their closing tag </picture>. As we are not applying any effect to them, we can use inline taging.
 
 Take a closer look at the ends of those lines, and notice the / (slash) sign just before the > (greater than) :
 
-''.../help/assets/IMG_0017.JPG" />''
+::
+	.../help/assets/IMG_0017.JPG" />
 
 This slash closes the tag. This is a handy tip to produce lighter and less bloated XML definitions.
 
@@ -216,15 +232,16 @@ We can see that we have 2 layers pic01Landscape and pic01Portrait that are used 
 
 Let's see it in action:
 
-''<movie service="craftsman-1.0">''
-''  <body>''
-''      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">''
-''        <text>What a wonderfull world !</text>''
-''        <style layer="main:pic01Portrait"  visible="false"/>''
-''        <style layer="main:pic01Landscape"  visible="false"/>''
-''      </widget>''
-''  </body>''
-''</movie>''
+::
+	<movie service="craftsman-1.0">
+	  <body>
+	      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
+	        <text>What a wonderfull world !</text>
+	        <style layer="main:pic01Portrait"  visible="false"/>
+	        <style layer="main:pic01Landscape"  visible="false"/>
+	      </widget>
+	  </body>
+	</movie>
 
 You'll notice that i've also used the inline taging to save space on both <style /> lines.
 
@@ -237,14 +254,15 @@ Changing a color is as easy are removing layers, we'll also be using the <style 
 
 First of all, let's have a look at this project. Remix it, it should look something like this:
 
-''<movie service="craftsman-1.0">''
-''  <body>''
-''    <widget type="set.moviestyle.machete.solo.01" duration="10">''
-''      <image filename="http://stupeflix-assets.s3.amazonaws.com/help/assets/IMG_0017.JPG" />''
-''      <text>Stupeflix</text>''
-''    </widget>''
-''  </body>''
-''</movie>''
+::
+	<movie service="craftsman-1.0">
+	  <body>
+	    <widget type="set.moviestyle.machete.solo.01" duration="10">
+	      <image filename="http://stupeflix-assets.s3.amazonaws.com/help/assets/IMG_0017.JPG" />
+	      <text>Stupeflix</text>
+	    </widget>
+	  </body>
+	</movie>
 
 This is a simple Widget, with a text and a user picture. To bake this extreme look, inspired by Robert Rodriguez “Machete” movie, the widget uses 4 colors:
 
@@ -254,20 +272,21 @@ This is a simple Widget, with a text and a user picture. To bake this extreme lo
 
 If we have a quick look at the Stupeflix Library, we get the 4 solid names. Now we just have to change their color in the <style /> tags.
 
-''<movie service="craftsman-1.0">''
-''  <body>''
-''    <widget type="set.moviestyle.machete.solo.01" duration="10">''
-''      <image filename="http://stupeflix-assets.s3.amazonaws.com/help/assets/IMG_0017.JPG" />''
-''      <text>Stupeflix</text>''
-''''
-''      <style layer="background:lightColor" color="#F892FE"></style>''
-''      <style layer="background:darkColor" color="#F600E2"></style>''
-''      <style layer="pictureStyle:highlight" color="#F9B2FF"></style>''
-''      <style layer="pictureStyle:Shadows" color="#0C000E"></style>''
-''''
-''    </widget>''
-''  </body>''
-''</movie>''
+::
+	<movie service="craftsman-1.0">
+	  <body>
+	    <widget type="set.moviestyle.machete.solo.01" duration="10">
+	      <image filename="http://stupeflix-assets.s3.amazonaws.com/help/assets/IMG_0017.JPG" />
+	      <text>Stupeflix</text>
+
+	      <style layer="background:lightColor" color="#F892FE"></style>
+	      <style layer="background:darkColor" color="#F600E2"></style>
+	      <style layer="pictureStyle:highlight" color="#F9B2FF"></style>
+	      <style layer="pictureStyle:Shadows" color="#0C000E"></style>
+
+	    </widget>
+	  </body>
+	</movie>
 
 If you generate the video, you'll see that now we have nicely corporate pinkish colors.
 
@@ -275,22 +294,23 @@ As this Widget rely heavily on the user picture contrast, you can try to apply a
 
 Here is the result with a lower contrast.
 
-''<movie service="craftsman-1.0">''
-''  <body>''
-''    <widget type="set.moviestyle.machete.solo.01" duration="10">''
-''      <image filename="http://stupeflix-assets.s3.amazonaws.com/help/assets/IMG_0017.JPG">''
-''        <filter type="colormap" preset="lowContrast" />''
-''      </image>''
-''      <text>Stupeflix</text>''
-''''
-''      <style layer="background:lightColor" color="#F892FE"></style>''
-''      <style layer="background:darkColor" color="#F600E2"></style>''
-''      <style layer="pictureStyle:highlight" color="#F9B2FF"></style>''
-''      <style layer="pictureStyle:Shadows" color="#0C000E"></style>''
-''''
-''    </widget>''
-''  </body>''
-''</movie>''
+::
+	<movie service="craftsman-1.0">
+	  <body>
+	    <widget type="set.moviestyle.machete.solo.01" duration="10">
+	      <image filename="http://stupeflix-assets.s3.amazonaws.com/help/assets/IMG_0017.JPG">
+	        <filter type="colormap" preset="lowContrast" />
+	      </image>
+	      <text>Stupeflix</text>
+
+	      <style layer="background:lightColor" color="#F892FE"></style>
+	      <style layer="background:darkColor" color="#F600E2"></style>
+	      <style layer="pictureStyle:highlight" color="#F9B2FF"></style>
+	      <style layer="pictureStyle:Shadows" color="#0C000E"></style>
+
+	    </widget>
+	  </body>
+	</movie>
 
 Notice how I turned back the picture inline tagging to a traditional tagging to allow the filter use.
 
@@ -306,16 +326,17 @@ Putting two Widgets together is as easy as putting them one after another in the
 
 Should look mostly like that:
 
-''<movie service="craftsman-1.0">''
-''  <body>''
-''      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">''
-''        <text>What a wonderfull world !</text>''
-''      </widget>''
-''      <widget type="set.scrapbook.map.01b" duration="10.0">''
-''        <image type="map" center="Paris" zoom="15" />''
-''      </widget>''
-''  </body>''
-''</movie>''
+::
+	<movie service="craftsman-1.0">
+	  <body>
+	      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
+	        <text>What a wonderfull world !</text>
+	      </widget>
+	      <widget type="set.scrapbook.map.01b" duration="10.0">
+	       <image type="map" center="Paris" zoom="15" />
+	      </widget>
+	  </body>
+	</movie>
 
 You can see that we have just put 2 Widgets one after another to create this short video. But you can also see that in this case, the cut between the 2 scenes is not really eye candy. If you create a project on our studio with a simple text and a map, you'll notice that we apply what lloks like a slide transition between the scenes.
 
@@ -325,17 +346,18 @@ For the transition you will need to have at least 2 bricks as they only work bet
 
 Let's add the transition in our project:
 
-''<movie service="craftsman-1.0">''
-''  <body>''
-''      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">''
-''        <text>What a wonderfull world !</text>''
-''      </widget>''
-''      <transition />''
-''      <widget type="set.scrapbook.map.01b" duration="10.0">''
-''        <image type="map" center="Paris" zoom="15" />''
-''      </widget>''
-''  </body>''
-''</movie>''
+::
+	<movie service="craftsman-1.0">
+	  <body>
+	      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
+	        <text>What a wonderfull world !</text>
+	      </widget>
+	      <transition />
+	      <widget type="set.scrapbook.map.01b" duration="10.0">
+	        <image type="map" center="Paris" zoom="15" />
+	      </widget>
+	  </body>
+	</movie>
 
 Now that our transition tag is properly inserted, we need to tell what transition we want. You have two choices. Either you choose from our list of built-in transitions, or you choose a custom made transition Widget.
 
@@ -343,29 +365,32 @@ For this first exemple, let's use the built-in transition move. We'll make this 
 
 Should look like this:
 
-''<transition type="move" duration="1" direction="left"/>''
+::
+	<transition type="move" duration="1" direction="left"/>
 
 or like this if you are using a custom made transition widget in After Effects:
 
-''<transition type="custom" duration="1" >''
-''  <widget type="set.transitions.dissolve.01"/>''
-''</transition>''
+::
+	<transition type="custom" duration="1" >
+	  <widget type="set.transitions.dissolve.01"/>
+	</transition>
 
 If you look at the result here or here, you'll notice that the final duration of the video is 19 seconds and not 20 seconds as you might expect.
 
 If we have a closer look at the XML defintion we clearly see that both widgets are 10 second long:
 
-''<movie service="craftsman-1.0">''
-''  <body>''
-''      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">''
-''        <text>What a wonderfull world !</text>''
-''      </widget>''
-''      <transition type="move" duration="1" direction="left"/>''
-''      <widget type="set.scrapbook.map.01b" duration="10.0">''
-''        <image type="map" center="Paris" zoom="15" />''
-''      </widget>''
-''  </body>''
-''</movie>''
+::
+	<movie service="craftsman-1.0">
+	  <body>
+	      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
+	        <text>What a wonderfull world !</text>
+	      </widget>
+	      <transition type="move" duration="1" direction="left"/>
+	      <widget type="set.scrapbook.map.01b" duration="10.0">
+	        <image type="map" center="Paris" zoom="15" />
+	      </widget>
+	  </body>
+	</movie>
 
 So why is the video 19 sec instead of 20 ? As the transition is an in-between state you might expect that a one second transition takes half second of the previous Widget and half a second of the next Widget.
 
@@ -382,13 +407,14 @@ Audio is not directly supported in our conversion process as widgets inside Stup
 
 We will then upload this audio file and link it to your widget inside the XML. If you want to have the audio file play at the same time of the widget, you'll need to stack them:
 
-''<movie service="craftsman-1.0">''
-''  <body>''
-''    <stack>''
-''      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">''
-''        <text>What a wonderfull world !</text>''
-''      </widget>''
-''      <audio filename="url_of_your_file.mp3"/>''
-''    </stack>''
-''  </body>''
-''</movie>''
+::
+	<movie service="craftsman-1.0">
+	  <body>
+	    <stack>
+	      <widget type="set.scrapbook.text.01b.m.01" duration="10.0">
+	        <text>What a wonderfull world !</text>
+	      </widget>
+	      <audio filename="url_of_your_file.mp3"/>
+	    </stack>
+	  </body>
+	</movie>
