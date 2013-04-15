@@ -61,7 +61,7 @@ We recommand a default to 5 seconds per item duration. An item can be a text, a 
 For example, a Widget with 3 pictures will have a 15 second duration. If in your widget you choose to display one picture at a time, these 15 seconds include the transitions between your pictures. So it's not 5 seconds of full display per item, it can be shorter or longer depending on how you organize your Widget. But in the end, it will have to be 15 seconds for 3 pictures. If you choose to add small captions on top of your pictures, they will still be shown for 15 seconds as items displayed simultaneously don't add-up their durations.
 
 
-Linear Tempalte
+Linear Template
 ---------------
 
 When you are designing a video for an advertising campaign, unlike a non linear Template, you are doing the storytelling for the user, but you allow him/her to somehow interact with your story by customizing the video.
