@@ -20,6 +20,6 @@ We are internally using Adobe After Effects CS6, but we accepts projects from CS
 Where to learn After Effects
 ----------------------------
 
-If you are new to After Effects and want to quickly learn the basics, head over to VideoCopilot's Basic Training Series. You'll be able to create cool stuff in a matter of hours.
+If you are new to After Effects and want to quickly learn the basics, head over to `VideoCopilot Basic Training Series <http://www.videocopilot.net/basic/>`_ . You'll be able to create cool stuff in a matter of hours.
 
 Now if you're already an After Effects artist and want to know what the technical constraints and requirements are to work with Stupeflix, just click the Next button below :)
