@@ -54,9 +54,9 @@ As your project complexity can vary during time, we added a temporal complexity 
 
 ::
 
-	Time Stamp: 		| 0		| 10	| 20	| 30	| 40	| 50	| 60	| 70	| 80	| 90	| 
+	Time Stamp: 		| 0	| 10	| 20	| 30	| 40	| 50	| 60	| 70	| 80	| 90	| 
 	Layer Stack: 		| 12	| 12	| 12	| 12	| 12	| 12	| 12	| 12	| 12	| 12	| 
-	Project Score: 		| 1		| 1		| 1		| 1		| 1		| 1		| 1		| 1		| 1		| 1		| 
+	Project Score: 		| 1	| 1	| 1	| 1	| 1	| 1	| 1	| 1	| 1	| 1	| 
 	Death Combo: 		| No 	| No 	| No 	| No 	| No 	| No 	| No 	| No 	| No 	| No 	| 
 
 The first line, **Time Stamp** is the frame number. We display show 10 frames, every 1/10 length of your project.
