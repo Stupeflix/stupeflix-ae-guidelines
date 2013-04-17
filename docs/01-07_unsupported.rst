@@ -30,4 +30,4 @@ We don't support these graphical assets inside AE projects (non exhaustive list)
 - Illustrator Files
 - EPS Files
 
-* We don't support audio files inside an After Effects Project, but audio files can be played inside the XML that will embbed your AE Widget. More info about this here. 
+* We don't support audio files inside an After Effects Project, but audio files can be played inside the XML that will embbed your AE Widget. More info about this `here <https://stupeflix-ae-guidelines.readthedocs.org/en/latest/03-02_xml.html#audio>`_. 

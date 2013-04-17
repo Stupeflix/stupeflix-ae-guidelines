@@ -42,9 +42,9 @@ Customizable Widgets
 
 If you want to, you can create what we call “Customizable Widgets”. In these Widgets, the placeholders are not only used for showing the user pictures, they are also used to receive decoration assets such as background, borders, custom graphic elements.
 
-You can get a better idea of it by having a look at this After Effects Widget and this XML Editor project. See how you can completely customize the look and feel.
-
 These Widgets are resource-hungry, so using them can have an impact on performance. You can choose to make an entirely customizable template (and specify default assets), but rendering time will be impacted, and depending on the complexity of your Widgets, render time can really be lengthened.
+
+Mixing your project with XML can help you achieve something similar. With XML you can hide any layer of your AE widget, change the solid or text colors. We are using this technique in our demo project. Preview it online `here <http://xeditor.stupeflix.com/video/7R8w3QvDYK/>`_, or get the AE project `here <http://assets.stupeflix.com.s3.amazonaws.com/help/projects/Demo_CS5.zip>`_.
 
 Sub-Styles
 ^^^^^^^^^^
@@ -56,10 +56,9 @@ Sub-styles are “pre-made” customizable Widgets. The only difference is that 
 Technical Considerations
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-We recommand a default to 5 seconds per item duration. An item can be a text, a picture or a map.
+We recommand a default 5 seconds per item duration. An item can be a text, a picture or a map.
 
-For example, a Widget with 3 pictures will have a 15 second duration. If in your widget you choose to display one picture at a time, these 15 seconds include the transitions between your pictures. So it's not 5 seconds of full display per item, it can be shorter or longer depending on how you organize your Widget. But in the end, it will have to be 15 seconds for 3 pictures. If you choose to add small captions on top of your pictures, they will still be shown for 15 seconds as items displayed simultaneously don't add-up their durations.
-
+For example, a Widget with 3 pictures will have a 15 second duration. If in your widget you choose to display one picture at a time, these 15 seconds include the transitions between your pictures. So it's not 5 seconds of full display per item, it can be shorter or longer depending on how you organize your Widget. But in the end, it will have to be around 15 seconds for 3 pictures. If you choose to add small captions on top of your pictures, they will still be shown for 15 seconds as items displayed simultaneously don't add-up their durations.
 
 Linear Template
 ---------------
@@ -68,7 +67,7 @@ When you are designing a video for an advertising campaign, unlike a non linear 
 
 Usually, such projects are designed as a long video with special parts where user assets can be seen. One could even imagine different paths or scenes for the video depending on some user choices.
 
-In such cases, there is not a predefined Widget structure, it really depends on how your video is conceived. From past projects and experience, it is safe to not slice your video into Widgets. Just keep on project for the whole video.
+In such cases, there is not a predefined Widget structure, it really depends on how your video is conceived. From past projects and experience, it is safe to not slice your video into multiple Widgets. Just keep on project for the whole video, or for each path of the video.
 
 Technical Considerations
 ^^^^^^^^^^^^^^^^^^^^^^^^

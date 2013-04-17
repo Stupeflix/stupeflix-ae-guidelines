@@ -135,5 +135,9 @@ Demo Project
 We have made a sample projects for you to see how everything is working out on a simili real-world project:
 
 If you have After Effects CS5 or above, please download this full featured project: `Demo CS5 <http://assets.stupeflix.com.s3.amazonaws.com/help/projects/Demo_CS5.zip>`_
+
 You can preview the result in our XML Editor `here <http://xeditor.stupeflix.com/video/7R8w3QvDYK/>`_ (remix a copy to see the XML code).
-In this project, you can customize the front logo, the front text (the left text is linked to the front text), the movie poster on the right and the color of the front pane. For that you will find 2 graphical placeholders and 1 text placeholder. The project is a mix of 2D/3D layers spread in several precompositions masked by trackmattes.
+
+In this project, you can customize the front logo, the front text (the left text is linked to the front text), the movie poster on the right and the color of the front pane. For that you will find 2 graphical placeholders and 1 text placeholder. 
+
+The project is a mix of 2D/3D layers spread in several precompositions masked by trackmattes.
