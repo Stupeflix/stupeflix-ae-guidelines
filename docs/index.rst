@@ -25,5 +25,4 @@ This documentation is our little living thing, it regularly evoles and we feed i
    02-01_optim
    03-01_xml_editor
    03-02_xml
-   04-01_tips
 
