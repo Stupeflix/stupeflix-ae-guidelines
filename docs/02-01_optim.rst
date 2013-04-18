@@ -77,3 +77,12 @@ So beware of nested matting and try to avoid depth bigger than 3.
 
 Also, if you need to stack several trackmatted layers, all using the same trackmatte, you will get better performance by precomposing your layer together and then only matting the precomp. This will save some render time
 
+iOS Render Engine
+-----------------
+
+If your campaign or your template is to be used on our iOS Renderer, you might take some more things into consideration:
+
+- iOS Renderer supports bezier Keframes without rasterizing them.
+- iOS Renderer will struggle with a layer stack higher than 10.
+- iOS Renderer does not support video assets such as prerendered animated backgrounds.
+- iOS Renderer won't accept assets larger than 2048x2048
