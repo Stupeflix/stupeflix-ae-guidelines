@@ -37,11 +37,24 @@ If you design a Widget for our iOS Renderer you'll have to take those extra exce
 
 * We don't support audio files inside an After Effects Project, but audio files can be played inside the XML that will embbed your AE Widget. More info about this `here <https://stupeflix-ae-guidelines.readthedocs.org/en/latest/03-02_xml.html#audio>`_. 
 
-Formats
--------
+Formats (Static Images)
+-----------------------
 
 We don't support these graphical assets inside AE projects (non exhaustive list):
 
 - Photoshop Files
 - Illustrator Files
 - EPS Files
+- Tiff Files
+
+We recommand using jpegs for non alpha assets, and png otherwise.
+
+Formats (Video files)
+-----------------------
+
+We don't support file formats other than h264 (in mp4 encapsulation) for non alpha videos, and On2VP6 (in flv encapsulation) for video with alpha.
+
+For h264 we do recommand using the High Profile with 5.1 Level, 2 pass VBR with a 5-8Mb bitrate for SD videos, and a 10-15Mb bitrate for HD videos and up to 20Mb for Ultra HD videos.
+For On2VP6 we do recommand a 10Mbit bitrate in VBR encoding, with target quality set to Optimal.
+
+We are using Adobe Media Encoder in house to compress our assets, we do recommand it.
