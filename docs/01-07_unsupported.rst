@@ -54,8 +54,7 @@ Formats (Video files)
 
 We don't support file formats other than h264 (in mp4 encapsulation) for non alpha videos, and On2VP6 (in flv encapsulation) for video with alpha.
 
-For h264 we do recommand using the High Profile with 5.1 Level, 2 pass VBR with a 5-8Mb bitrate for SD videos, and a 10-15Mb bitrate for HD videos and up to 20Mb for Ultra HD videos.
-
-For On2VP6 we do recommand a 10Mbit bitrate in VBR encoding, with target quality set to Optimal.
+ - For h264 we do recommand using the High Profile with 5.1 Level, 2 pass VBR with a 5-8Mb bitrate for SD videos, and a 10-15Mb bitrate for HD videos and up to 20Mb for Ultra HD videos.
+ - For On2VP6 we do recommand a 10Mbit bitrate in VBR encoding, with target quality set to Optimal.
 
 We are using Adobe Media Encoder in house to compress our assets, we do recommand it.
