@@ -7,9 +7,9 @@ In order to help you make sure that your project is compatible with our engine, 
 Script Basics
 -------------
 
-Current version is 2.2 (Released April 16th 2013).
+Current version is 2.4 (Released October 29th 2014).
 
-You can download it here for CS5 and above: `Sxc Validation Script <http://assets.stupeflix.com.s3.amazonaws.com/help/projects/SxC_Validator_v2.2.zip>`_
+You can download it here for CS6 and above: `Sxc Validation Script <http://assets.stupeflix.com.s3.amazonaws.com/help/projects/SxC_Validator_v2.4.zip>`_
 
 To check if your project is good to go, open it in After Effects and then:
 
