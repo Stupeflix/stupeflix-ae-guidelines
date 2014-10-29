@@ -15,7 +15,7 @@ On top of that, After Effects has a great community, and a sweet learning curve.
 What versions are supported?
 ---------------------------
 
-We are internally using Adobe After Effects CS6, but we accepts projects from CS5 to CS6.
+We are internally using Adobe After Effects CC 2014, but we accepts projects from CS6 and above.
 
 Where to learn After Effects
 ----------------------------
