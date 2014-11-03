@@ -28,3 +28,10 @@ Video Stacks
 ------------
 
 We detected that you have 3 or more video stacked at some point in your widget. Decompressing and playing back several video streams at the same time can heavily slow down the rendering. You might want to merge them to lower the stream count. Remember that you can also render videos with an alpha channel using the On2VP codec in an FLV container.
+
+Video UGC Continuity
+--------------------
+
+When you plan to have video recording as UGC content, by default the video playback starts at the beggining of the UGC footage. But you might often want to spread the content of the UGC footage over several placeholders in time. 
+
+You'll need to create a placeholder for each slice of the video, and increment accordingly the placeholder index. Then, in the XML, you'll need to use the skip attribute of the video tag. The skip value for each placeholder is specified in the Placeholder section of the report.
