@@ -123,6 +123,7 @@ Exporting
 In order for us to convert your After Effects Widget into a Stupeflix Widget, we need you to send us your project. In order to do that efficiently, we need you to follow these easy steps:
 
 - Check that your project is Optimized, properly tagged & keyframed, and fully compatible using our `AE SxC Validation Script <https://stupeflix-ae-guidelines.readthedocs.org/en/latest/01-09_script.html>`_.
+- Make sure your main comp is named 'main' and is in the root folder of the project (if not, you'll have a warning, and the script will take care of it during the export process)
 - Select your main composition and go to File > Reduce Project.
 - Now go to File > Collect Files, select a folder and choose to export all files.
 - If you use custom Fonts, include them in the directory created by the Collect Files command.
